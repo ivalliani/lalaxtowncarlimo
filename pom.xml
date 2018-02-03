@@ -39,6 +39,12 @@
     <artifactId>poi-ooxml</artifactId>
     <version>3.15</version>
 </dependency>
+
+<dependency>
+    <groupId>org.ow2.asm</groupId>
+    <artifactId>asm</artifactId>
+    <version>6.0</version>
+</dependency>
   </dependencies>
   <build>
 <plugins>
