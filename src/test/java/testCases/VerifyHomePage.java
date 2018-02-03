@@ -82,6 +82,10 @@ public class VerifyHomePage {
 		
 		home.selectPickupAP(DataProviderFactory.getExcel().getData(0, 1, 2));
 		
+		
+		
+		
+		
 		String RequestTitle = driver.getTitle();
 		
 		System.out.println("Request a Page Title "+RequestTitle);

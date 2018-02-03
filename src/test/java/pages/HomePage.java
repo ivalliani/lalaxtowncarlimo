@@ -10,6 +10,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import factory.DataProviderFactory;
 import junit.framework.Assert;
 
 public class HomePage {
@@ -41,6 +42,8 @@ public class HomePage {
 	
 	@FindBy (xpath=".//*[@id='dp-popup']/div[3]/table/tbody/tr[3]/td[4]") WebElement clickonDate;
 	
+	@FindBy (xpath=".//*[@id='qPickupMonth']") WebElement pickupdate;
+	
 	@FindBy (xpath=".//*[@id='qPickupHour']") WebElement pickupHour;
 	
 	@FindBy (xpath=".//*[@id='qPickupMint']") WebElement pickupMinute;
@@ -48,6 +51,14 @@ public class HomePage {
 	@FindBy (xpath=".//*[@id='qPickupAP']") WebElement pickupAP;
 	
 	@FindBy (tagName="body") WebElement pagetext;
+	
+	@FindBy (xpath=".//*[@id='qPickupAddress']") WebElement pickupAddress;
+	
+	@FindBy (xpath="qDropoffAddress") WebElement dropoffAddress;
+	
+	
+	
+	
 	
 	public void selectServicetype(String servicetype)
 	{
@@ -86,6 +97,8 @@ public class HomePage {
 	public void chooseDate()
 	{
 		clickonDate.click();
+		String pickupdates= pickupdate.getAttribute("value");
+		System.out.println("The Pickup Date is "+ pickupdates);
 	}
 	
 	public void selectPickupHour(String Hour)
@@ -112,6 +125,18 @@ public class HomePage {
 		
 		
 	}
+	
+	public void PickupAddress(String Pickupaddress)
+	{
+		pickupAddress.sendKeys(Pickupaddress);
+	}
+	
+	
+	public void DropoffAddress(String Dropoffaddress)
+	{
+		dropoffAddress.sendKeys(Dropoffaddress);
+	}
+	
 	
 	
 	
