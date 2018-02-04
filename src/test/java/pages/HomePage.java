@@ -30,31 +30,19 @@ public class HomePage {
 	
 	@FindBy (xpath=".//*[@id='qServiceType']") WebElement selectService;
 	
-	@FindBy (xpath="//input[contains(@id,'qPickupFive')]") WebElement PickupCity;
-	
-	@FindBy (id="qDropoffFive") WebElement dropoffCity;
-	
-	@FindBy (xpath=".//*[@id='Submit5']") WebElement clickNext;
-	
-@FindBy (xpath=".//*[@id='qPassengerQty']") WebElement selectPassenger;
-	
-	@FindBy (xpath=".//*[@id='sprytextfield9']/a") WebElement clickDateLink;
-	
-	@FindBy (xpath=".//*[@id='dp-popup']/div[3]/table/tbody/tr[3]/td[4]") WebElement clickonDate;
-	
-	@FindBy (xpath=".//*[@id='qPickupMonth']") WebElement pickupdate;
-	
-	@FindBy (xpath=".//*[@id='qPickupHour']") WebElement pickupHour;
-	
-	@FindBy (xpath=".//*[@id='qPickupMint']") WebElement pickupMinute;
-	
-	@FindBy (xpath=".//*[@id='qPickupAP']") WebElement pickupAP;
+	@FindBy (xpath=".//*[@id='Submit5']") WebElement clickroundLocal;
 	
 	@FindBy (tagName="body") WebElement pagetext;
 	
-	@FindBy (xpath=".//*[@id='qPickupAddress']") WebElement pickupAddress;
+	@FindBy (xpath=".//*[@id='qServiceType']") WebElement selectonewaytoairport;
 	
-	@FindBy (xpath="qDropoffAddress") WebElement dropoffAddress;
+	@FindBy (xpath=".//*[@id='Submit1']") WebElement clickononewayaiprot;
+	
+	@FindBy (xpath=".//*[@id='Submit2']") WebElement clickononewayfromairport;
+	
+	
+	
+	
 	
 	
 	
@@ -66,57 +54,13 @@ public class HomePage {
 			selectservice.selectByValue(servicetype);
 	}
 	
-	public void PickupCity(String Pickup)
+	
+	public void Clickroundlocal()
 	{
-		PickupCity.clear();
-		PickupCity.sendKeys(Pickup);
+		clickroundLocal.click();
 	}
 	
-	public void dropoffCity(String Dropoff)
-	{
-		dropoffCity.clear();
-		dropoffCity.sendKeys(Dropoff);
-	}
 	
-	public void ClickonNext()
-	{
-		clickNext.click();
-	}
-	
-	public void selectPassengers(String passengers)
-	{
-		Select passenger = new Select (selectPassenger);
-		passenger.selectByValue(passengers);
-	}
-	
-	public void clickDate()
-	{
-		clickDateLink.click();
-	}
-	
-	public void chooseDate()
-	{
-		clickonDate.click();
-		String pickupdates= pickupdate.getAttribute("value");
-		System.out.println("The Pickup Date is "+ pickupdates);
-	}
-	
-	public void selectPickupHour(String Hour)
-	{
-		pickupHour.sendKeys(Hour);
-	}
-	
-	public void selectPickupMin(String Minute)
-	{
-		pickupMinute.sendKeys(Minute);
-	}
-
-	public void selectPickupAP(String AMPM)
-	{
-		pickupAP.sendKeys(AMPM);
-		
-		
-	}
 	
 	public String pagetext() {
 		
@@ -126,16 +70,23 @@ public class HomePage {
 		
 	}
 	
-	public void PickupAddress(String Pickupaddress)
+	public void onewaytoairport(String onewayairprot)
 	{
-		pickupAddress.sendKeys(Pickupaddress);
+		Select onewayaiport = new Select (selectonewaytoairport);
+		onewayaiport.selectByValue(onewayairprot);
+		clickononewayaiprot.click();
 	}
 	
 	
-	public void DropoffAddress(String Dropoffaddress)
+	public void onewayfromairport(String onewayfromairprot)
 	{
-		dropoffAddress.sendKeys(Dropoffaddress);
+		Select onewayaiport = new Select (selectService);
+		onewayaiport.selectByValue(onewayfromairprot);
+		clickononewayfromairport.click();
+		
 	}
+	
+	
 	
 	
 	

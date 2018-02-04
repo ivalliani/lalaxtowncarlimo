@@ -63,53 +63,87 @@ public class VerifyHomePage {
 		
 		
 		home.selectServicetype(DataProviderFactory.getExcel().getData(0, 0, 0));
+		home.Clickroundlocal();
 		
-		home.PickupCity(DataProviderFactory.getExcel().getData(0, 0, 1));
-		
-		home.dropoffCity(DataProviderFactory.getExcel().getData(0, 0, 2));
-		
-		home.ClickonNext();
-		
-		home.selectPassengers(DataProviderFactory.getExcel().getData(0, 1, 0));
-		
-		
-		home.clickDate();
-		home.chooseDate();
-		
-		home.selectPickupHour(DataProviderFactory.getExcel().getData(0, 1, 0));
-		
-		home.selectPickupMin(DataProviderFactory.getExcel().getData(0, 1, 1));
-		
-		home.selectPickupAP(DataProviderFactory.getExcel().getData(0, 1, 2));
-		
-		
-		
-		
-		
-		String RequestTitle = driver.getTitle();
-		
-		System.out.println("Request a Page Title "+RequestTitle);
-		
-		logger.log(LogStatus.INFO, "Round Local Trip");
 		
 		String text = home.pagetext();
 		
 		if (text.contains("Round trip local only"))
 		{
-			System.out.println("The Request a Page has been Verified");
-			logger.log(LogStatus.PASS, "The Request a Page has been Verified");
+			System.out.println("Round Trip Local Only has been verified");
+			logger.log(LogStatus.PASS, "Round Trip Local Only has been Verified");
 		}
 		
 		else
 		{
-			System.out.println("The Request page is Not Verified");
-			logger.log(LogStatus.FAIL, "The Page is Note Verified");
-			logger.log(LogStatus.INFO, "The Request a Page is Not Verified");
+			System.out.println("The Round Trip Local Only is  Not Verified");
+			logger.log(LogStatus.FAIL, "Round Trip Local Only is Note Verified");
+			logger.log(LogStatus.INFO, "Round Trip Local Only is Not Verified");
 		}
 		
+		logger.log(LogStatus.INFO, logger.addScreenCapture(Helper.captureScreenShots(driver, "Round Trip Local Only")));
 		
 		
-		logger.log(LogStatus.INFO, logger.addScreenCapture(Helper.captureScreenShots(driver, "Round Trip Local")));
+		driver.findElement(By.xpath(".//*[@id='wrap']/nav/ul/li[1]/a")).click();
+		
+		home.onewaytoairport(DataProviderFactory.getExcel().getData(0, 0, 1));
+		
+		String toairporttext = home.pagetext();
+		
+		if (toairporttext.contains("One way trip to Airport"))
+		{
+			System.out.println("One Way Trip to Airport has been verified");
+			logger.log(LogStatus.PASS, "One Way Trip to Airport has been Verified");
+		}
+		
+		else
+		{
+			System.out.println("One Way Trip to Airport is  Not Verified");
+			logger.log(LogStatus.FAIL, "One Way Trip to Airport is Note Verified");
+			logger.log(LogStatus.INFO, "One Way Trip to Airport is Not Verified");
+		}
+		
+		logger.log(LogStatus.INFO, logger.addScreenCapture(Helper.captureScreenShots(driver, "One Way Trip to Airport")));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		driver.findElement(By.xpath(".//*[@id='wrap']/nav/ul/li[1]/a")).click();
+		
+		home.onewayfromairport(DataProviderFactory.getExcel().getData(0, 0, 2));
+		
+		String fromairporttext = home.pagetext();
+		
+		if (fromairporttext.contains("One way trip from Airport"))
+		{
+			System.out.println("One Way Trip from Airport has been verified");
+			logger.log(LogStatus.PASS, "One Way Trip from Airport has been Verified");
+		}
+		
+		else
+		{
+			System.out.println("One Way Trip from Airport is  Not Verified");
+			logger.log(LogStatus.FAIL, "One Way Trip from Airport is Note Verified");
+			logger.log(LogStatus.INFO, "One Way Trip from Airport is Not Verified");
+		}
+		
+		logger.log(LogStatus.INFO, logger.addScreenCapture(Helper.captureScreenShots(driver, "One Way Trip from Airport")));
+		
+		
+		
+		
+		
+		
 		
 		report.endTest(logger);
 		report.flush();
