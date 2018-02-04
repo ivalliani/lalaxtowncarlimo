@@ -40,6 +40,17 @@ public class HomePage {
 	
 	@FindBy (xpath=".//*[@id='Submit2']") WebElement clickononewayfromairport;
 	
+	@FindBy (xpath="//input[contains(@value,'FromAirport')]") WebElement twowayfromairport;
+	
+	@FindBy (xpath="//input[contains(@value,'ToAirport')]")WebElement twowaytoairport;
+	
+	@FindBy (id="qSubmitStep1") WebElement twowayfromAirportclick;
+	
+	@FindBy (id="Submit6") WebElement hourlyclick;
+
+
+	
+	
 	
 	
 	
@@ -84,11 +95,36 @@ public class HomePage {
 		onewayaiport.selectByValue(onewayfromairprot);
 		clickononewayfromairport.click();
 		
+		
+	}
+	
+	
+	public void twowaytoairport(String twowaytoairprot)
+	{
+		Select twowaytoairports = new Select (selectService);
+		twowaytoairports.selectByValue(twowaytoairprot);
+		twowaytoairport.click();
+		twowayfromAirportclick.click();
+	}
+	
+	
+	public void twowayfromairport(String twowayfromairprot)
+	{
+		Select twowayfromairports = new Select (selectService);
+		twowayfromairports.selectByValue(twowayfromairprot);
+		twowayfromairport.click();
+		twowayfromAirportclick.click();
 	}
 	
 	
 	
+	public void Hourly(String hourly)
+	{
+		Select hourlytour = new Select (selectService);
+		hourlytour.selectByValue(hourly);
+		hourlyclick.click();
 	
+	}
 	
 	
 	

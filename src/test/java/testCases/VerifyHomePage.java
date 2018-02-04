@@ -140,8 +140,72 @@ public class VerifyHomePage {
 		logger.log(LogStatus.INFO, logger.addScreenCapture(Helper.captureScreenShots(driver, "One Way Trip from Airport")));
 		
 		
+		driver.findElement(By.xpath(".//*[@id='wrap']/nav/ul/li[1]/a")).click();
+		
+		home.twowayfromairport(DataProviderFactory.getExcel().getData(0, 0, 3));
+		String twowayfromairporttext = home.pagetext();
+		
+		if (twowayfromairporttext.contains("Round Trip Involving Airport"))
+		{
+			System.out.println("FROM AIRPORT --- Round Trip Involving Airport has been verified");
+			logger.log(LogStatus.PASS, "FROM AIRPORT --- Round Trip Involving Airport has been Verified");
+		}
+		
+		else
+		{
+			System.out.println(" FROM AIRPORT --- Round Trip Involving Airport is  Not Verified");
+			logger.log(LogStatus.FAIL, "FROM AIRPORT --- Round Trip Involving Airport is Note Verified");
+			logger.log(LogStatus.INFO, "FROM AIRPORT --- Round Trip Involving Airport is Not Verified");
+		}
+		
+		logger.log(LogStatus.INFO, logger.addScreenCapture(Helper.captureScreenShots(driver, "FROM AIRPORT --- Round Trip Involving Airport")));
+
 		
 		
+		driver.findElement(By.xpath(".//*[@id='wrap']/nav/ul/li[1]/a")).click();
+		
+		home.twowayfromairport(DataProviderFactory.getExcel().getData(0, 0, 3));
+		
+String twowaytoairporttext = home.pagetext();
+		
+		if (twowaytoairporttext.contains("Round Trip Involving Airport"))
+		{
+			System.out.println("TO AIRPORT --- Round Trip Involving Airport has been verified");
+			logger.log(LogStatus.PASS, "TO AIRPORT --- Round Trip Involving Airport has been Verified");
+		}
+		
+		else
+		{
+			System.out.println(" TO AIRPORT --- Round Trip Involving Airport is  Not Verified");
+			logger.log(LogStatus.FAIL, "TO AIRPORT --- Round Trip Involving Airport is Note Verified");
+			logger.log(LogStatus.INFO, "TO AIRPORT --- Round Trip Involving Airport is Not Verified");
+		}
+		
+		logger.log(LogStatus.INFO, logger.addScreenCapture(Helper.captureScreenShots(driver, "TO AIRPORT --- Round Trip Involving Airport")));
+
+		
+		
+		driver.findElement(By.xpath(".//*[@id='wrap']/nav/ul/li[1]/a")).click();
+		
+		home.Hourly(DataProviderFactory.getExcel().getData(0, 0, 5));
+		
+String hourlytext = home.pagetext();
+		
+		if (hourlytext.contains("Hourly / Multistop / Tour"))
+		{
+			System.out.println("Hourly / Multistop / Tour has been verified");
+			logger.log(LogStatus.PASS, "Hourly / Multistop / Tour has been Verified");
+		}
+		
+		else
+		{
+			System.out.println("Hourly / Multistop / Tour is  Not Verified");
+			logger.log(LogStatus.FAIL, "Hourly / Multistop / Tour is Note Verified");
+			logger.log(LogStatus.INFO, "Hourly / Multistop / Tour is Not Verified");
+		}
+		
+		logger.log(LogStatus.INFO, logger.addScreenCapture(Helper.captureScreenShots(driver, "hourlytours")));
+
 		
 		
 		
