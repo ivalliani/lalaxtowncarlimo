@@ -145,7 +145,7 @@ public class VerifyHomePage {
 		home.twowayfromairport(DataProviderFactory.getExcel().getData(0, 0, 3));
 		String twowayfromairporttext = home.pagetext();
 		
-		if (twowayfromairporttext.contains("Round Trip Involving Airportsss"))
+		if (twowayfromairporttext.contains("Round Trip Involving Airport"))
 		{
 			System.out.println("FROM AIRPORT --- Round Trip Involving Airport has been verified");
 			logger.log(LogStatus.PASS, "FROM AIRPORT --- Round Trip Involving Airport has been Verified");
@@ -191,7 +191,7 @@ String twowaytoairporttext = home.pagetext();
 		
 String hourlytext = home.pagetext();
 		
-		if (hourlytext.contains("Hourly / Multistop / Toured"))
+		if (hourlytext.contains("Hourly / Multistop / Tour"))
 		{
 			System.out.println("Hourly / Multistop / Tour has been verified");
 			logger.log(LogStatus.PASS, "Hourly / Multistop / Tour has been Verified");
