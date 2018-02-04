@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15678" started-at="2018-02-04T01:44:28Z" finished-at="2018-02-04T01:44:44Z">
+  <suite name="Default suite" duration-ms="20921" started-at="2018-02-04T02:47:36Z" finished-at="2018-02-04T02:47:57Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15678" started-at="2018-02-04T01:44:28Z" finished-at="2018-02-04T01:44:44Z">
+    <test name="Default test" duration-ms="20921" started-at="2018-02-04T02:47:36Z" finished-at="2018-02-04T02:47:57Z">
       <class name="testCases.VerifyHomePage">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:testCases.VerifyHomePage@d2cc05a]" name="openBrowser" is-config="true" duration-ms="7654" started-at="2018-02-03T19:44:28Z" finished-at="2018-02-03T19:44:36Z">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:testCases.VerifyHomePage@d2cc05a]" name="openBrowser" is-config="true" duration-ms="7060" started-at="2018-02-03T20:47:36Z" finished-at="2018-02-03T20:47:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="testHomePage()[pri:0, instance:testCases.VerifyHomePage@d2cc05a]" name="testHomePage" duration-ms="8024" started-at="2018-02-03T19:44:36Z" finished-at="2018-02-03T19:44:44Z">
+        <test-method status="PASS" signature="testHomePage()[pri:0, instance:testCases.VerifyHomePage@d2cc05a]" name="testHomePage" duration-ms="13845" started-at="2018-02-03T20:47:44Z" finished-at="2018-02-03T20:47:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHomePage -->
