@@ -207,7 +207,27 @@ String hourlytext = home.pagetext();
 		logger.log(LogStatus.INFO, logger.addScreenCapture(Helper.captureScreenShots(driver, "hourlytours")));
 
 		
+		driver.findElement(By.xpath(".//*[@id='wrap']/nav/ul/li[1]/a")).click();
 		
+		home.OneWayLocal(DataProviderFactory.getExcel().getData(0, 0, 4));
+		
+		String onewaylocaltext = home.pagetext();
+		
+		if (onewaylocaltext.contains("One way local trip"))
+		{
+			System.out.println("One way local trip has been verified");
+			logger.log(LogStatus.PASS, "One way local trip been Verified");
+		}
+		
+		else
+		{
+			System.out.println("One way local trip  is  Not Verified");
+			logger.log(LogStatus.FAIL, "One way local trip is Note Verified");
+			logger.log(LogStatus.INFO, "One way local trip is Not Verified");
+		}
+		
+		logger.log(LogStatus.INFO, logger.addScreenCapture(Helper.captureScreenShots(driver, "One way local trip")));
+
 		
 		report.endTest(logger);
 		report.flush();

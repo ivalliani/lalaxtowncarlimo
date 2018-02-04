@@ -47,6 +47,8 @@ public class HomePage {
 	@FindBy (id="qSubmitStep1") WebElement twowayfromAirportclick;
 	
 	@FindBy (id="Submit6") WebElement hourlyclick;
+	
+	@FindBy (id="Submit4") WebElement onewaylocalclick;
 
 
 	
@@ -123,6 +125,14 @@ public class HomePage {
 		Select hourlytour = new Select (selectService);
 		hourlytour.selectByValue(hourly);
 		hourlyclick.click();
+	
+	}
+	
+	public void OneWayLocal(String onewaylocal)
+	{
+		Select OneWayLocal = new Select (selectService);
+		OneWayLocal.selectByValue(onewaylocal);
+		onewaylocalclick.click();
 	
 	}
 	
